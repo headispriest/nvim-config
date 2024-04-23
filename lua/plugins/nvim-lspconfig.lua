@@ -24,6 +24,7 @@ return {
           offsetEncoding = { "utf-16" },
         },
         cmd = {
+          --stylua: ignore
           "clangd",
           "--query-driver=D:/MSYS2/mingw64/bin/clang.exe",
           "--background-index",

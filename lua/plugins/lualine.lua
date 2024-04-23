@@ -35,28 +35,38 @@ return {
     local miasma = {
       normal = {
         a = {bg = colors.red, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.darkgray, fg = colors.gray}
+        b = {bg = colors.blue, fg = colors.black},
+        c = {bg = colors.bg, fg = colors.white},
+        x = {},
+        y = {bg = colors.yellow, fg = colors.black},
       },
       insert = {
-        a = {bg = colors.blue, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.lightgray, fg = colors.white}
+        a = {bg = colors.green, fg = colors.black, gui = 'bold'},
+        b = {bg = colors.blue, fg = colors.black},
+        c = {bg = colors.bg, fg = colors.white},
+        x = {},
+        y = {bg = colors.yellow, fg = colors.black},
       },
       visual = {
         a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.inactivegray, fg = colors.black}
+        b = {bg = colors.blue, fg = colors.black},
+        c = {bg = colors.bg, fg = colors.white},
+        x = {},
+        y = {bg = colors.yellow, fg = colors.black},
       },
       replace = {
-        a = {bg = colors.red, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.black, fg = colors.white}
+        a = {bg = colors.cyan, fg = colors.black, gui = 'bold'},
+        b = {bg = colors.blue, fg = colors.black},
+        c = {bg = colors.bg, fg = colors.white},
+        x = {},
+        y = {bg = colors.yellow, fg = colors.black},
       },
       command = {
         a = {bg = colors.green, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.lightgray, fg = colors.white},
-        c = {bg = colors.inactivegray, fg = colors.black}
+        b = {bg = colors.blue, fg = colors.black},
+        c = {bg = colors.bg, fg = colors.white},
+        x = {},
+        y = {bg = colors.yellow, fg = colors.black},
       },
       inactive = {
         a = {bg = colors.black, fg = colors.grey, gui = 'bold'},
@@ -78,10 +88,21 @@ return {
         lualine_b = { "branch" },
 
         lualine_c = {
-          LazyVim.lualine.root_dir(),
-          
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { LazyVim.lualine.pretty_path() },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 1 },  colored = false, },
+          {
+            'filename',
+            padding = {left = 0, right = 0},
+            files_status = true,
+            newfile_status = true,
+            path = 0,
+            shorting_target = 40,
+            symbols = {
+              modified = '',      -- Text to show when the file is modified.
+              readonly = '󰌾',      -- Text to show when the file is non-modifiable or readonly.
+              unnamed = '󱥸', -- Text to show for unnamed buffers.
+              newfile = '󰎔',
+            },
+          },
         },
         lualine_x = {
           -- stylua: ignore
@@ -135,6 +156,7 @@ return {
               info = icons.diagnostics.Info,
               hint = icons.diagnostics.Hint,
             },
+            colored = false,
           },
         },
         lualine_z = {
