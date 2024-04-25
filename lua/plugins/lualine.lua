@@ -22,63 +22,63 @@ return {
 
     local colors = {
       bg = "#222222",
-			black = "#1c1c1c",
-			grey = "#666666",
-			red = "#685742",
-			green = "#5f875f",
-			yellow = "#B36D43",
-			blue = "#78824B",
-			magenta = "#bb7744",
-			cyan = "#C9A554",
-			white = "#D7C483",
+      black = "#1c1c1c",
+      grey = "#666666",
+      red = "#685742",
+      green = "#5f875f",
+      yellow = "#B36D43",
+      blue = "#78824B",
+      magenta = "#bb7744",
+      cyan = "#C9A554",
+      white = "#D7C483",
     }
     local miasma = {
       normal = {
-        a = {bg = colors.red, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.blue, fg = colors.black},
-        c = {bg = colors.bg, fg = colors.white},
+        a = { bg = colors.red, fg = colors.black, gui = "bold" },
+        b = { bg = colors.blue, fg = colors.black },
+        c = { bg = colors.bg, fg = colors.white },
         x = {},
-        y = {bg = colors.yellow, fg = colors.black},
+        y = { bg = colors.yellow, fg = colors.black },
       },
       insert = {
-        a = {bg = colors.green, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.blue, fg = colors.black},
-        c = {bg = colors.bg, fg = colors.white},
+        a = { bg = colors.green, fg = colors.black, gui = "bold" },
+        b = { bg = colors.blue, fg = colors.black },
+        c = { bg = colors.bg, fg = colors.white },
         x = {},
-        y = {bg = colors.yellow, fg = colors.black},
+        y = { bg = colors.yellow, fg = colors.black },
       },
       visual = {
-        a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.blue, fg = colors.black},
-        c = {bg = colors.bg, fg = colors.white},
+        a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
+        b = { bg = colors.blue, fg = colors.black },
+        c = { bg = colors.bg, fg = colors.white },
         x = {},
-        y = {bg = colors.yellow, fg = colors.black},
+        y = { bg = colors.yellow, fg = colors.black },
       },
       replace = {
-        a = {bg = colors.cyan, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.blue, fg = colors.black},
-        c = {bg = colors.bg, fg = colors.white},
+        a = { bg = colors.cyan, fg = colors.black, gui = "bold" },
+        b = { bg = colors.blue, fg = colors.black },
+        c = { bg = colors.bg, fg = colors.white },
         x = {},
-        y = {bg = colors.yellow, fg = colors.black},
+        y = { bg = colors.yellow, fg = colors.black },
       },
       command = {
-        a = {bg = colors.green, fg = colors.black, gui = 'bold'},
-        b = {bg = colors.blue, fg = colors.black},
-        c = {bg = colors.bg, fg = colors.white},
+        a = { bg = colors.green, fg = colors.black, gui = "bold" },
+        b = { bg = colors.blue, fg = colors.black },
+        c = { bg = colors.bg, fg = colors.white },
         x = {},
-        y = {bg = colors.yellow, fg = colors.black},
+        y = { bg = colors.yellow, fg = colors.black },
       },
       inactive = {
-        a = {bg = colors.black, fg = colors.grey, gui = 'bold'},
-        b = {bg = colors.black, fg = colors.grey},
-        c = {bg = colors.black, fg = colors.grey}
-      }
+        a = { bg = colors.black, fg = colors.grey, gui = "bold" },
+        b = { bg = colors.black, fg = colors.grey },
+        c = { bg = colors.black, fg = colors.grey },
+      },
     }
 
     return {
       options = {
-        section_separators = '',
-        component_separators = '',
+        section_separators = "",
+        component_separators = "",
         theme = miasma,
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
@@ -88,19 +88,19 @@ return {
         lualine_b = { "branch" },
 
         lualine_c = {
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 1 },  colored = false, },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 1 }, colored = false },
           {
-            'filename',
-            padding = {left = 0, right = 0},
+            "filename",
+            padding = { left = 0, right = 0 },
             files_status = true,
             newfile_status = true,
             path = 0,
             shorting_target = 40,
             symbols = {
-              modified = '',      -- Text to show when the file is modified.
-              readonly = '󰌾',      -- Text to show when the file is non-modifiable or readonly.
-              unnamed = '󱥸', -- Text to show for unnamed buffers.
-              newfile = '󰎔',
+              modified = "", -- Text to show when the file is modified.
+              readonly = "󰌾", -- Text to show when the file is non-modifiable or readonly.
+              unnamed = "󱥸", -- Text to show for unnamed buffers.
+              newfile = "󰎔",
             },
           },
         },

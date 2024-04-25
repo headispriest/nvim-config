@@ -72,4 +72,3 @@ return {
     return opts
   end,
 }
-
